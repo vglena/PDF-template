@@ -1,0 +1,480 @@
+@page {
+  size: A4;
+  margin: 0;
+}
+
+.editable-template,
+.document-pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.pdf-page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 14mm 16mm;
+  box-sizing: border-box;
+  background: white;
+  page-break-after: always;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #111;
+  overflow: hidden;
+}
+
+.page-header {
+  position: absolute;
+  top: 8mm;
+  left: 16mm;
+  right: 16mm;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 8mm;
+  left: 16mm;
+  right: 16mm;
+  font-size: 8px;
+}
+
+.tasacion-cover {
+  padding: 0;
+}
+
+.cover-top {
+  position: absolute;
+  top: 11mm;
+  left: 30mm;
+  right: 17mm;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.brand-wordmark {
+  color: #c50035;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.stamp-placeholder {
+  width: 31mm;
+  min-height: 17mm;
+  border: 0;
+  color: #c50035;
+  padding: 2mm;
+  font-size: 3.5px;
+  line-height: 1.35;
+}
+
+.stamp-placeholder strong {
+  display: block;
+  margin-bottom: 3mm;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.stamp-placeholder p {
+  display: block;
+  margin: 0;
+}
+
+.cover-content {
+  position: absolute;
+  top: 44mm;
+  left: 103mm;
+  width: 88mm;
+}
+
+.field-block {
+  margin-bottom: 8.4mm;
+}
+
+.field-block.compact {
+  margin-bottom: 4.2mm;
+}
+
+.field-block h2 {
+  margin: 0 0 2.4mm;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.boxed-line,
+.boxed-area {
+  width: 100%;
+  border: 0;
+  padding: 1.2mm 0;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.boxed-line {
+  min-height: 9.2mm;
+}
+
+.boxed-area {
+  min-height: 18mm;
+}
+
+.boxed-area.small {
+  min-height: 13.5mm;
+}
+
+.boxed-area p {
+  margin: 0;
+}
+
+.photo-frame {
+  width: 86.5mm;
+  height: 65mm;
+  margin-bottom: 3.4mm;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1mm;
+}
+
+.photo-frame p {
+  display: flex;
+  width: 48mm;
+  height: 64mm;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: #f6f6f6;
+  color: #666;
+  font-size: 10px;
+  text-align: center;
+}
+
+.image-placeholder {
+  cursor: text;
+}
+
+.cover-footer {
+  left: 0;
+  right: 0;
+  bottom: 4mm;
+  color: #b3002d;
+}
+
+.document-code {
+  position: absolute;
+  left: 12mm;
+  bottom: 3mm;
+  color: #111;
+  font-size: 7px;
+}
+
+.legal-line {
+  border-top: 0.45mm solid #b3002d;
+  padding-top: 1.3mm;
+  text-align: center;
+  font-size: 4.5px;
+  line-height: 1.2;
+}
+
+.page-brand {
+  position: absolute;
+  top: 7mm;
+  right: 20mm;
+  color: #c50035;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.tasacion-index {
+  padding: 0;
+}
+
+.index-title-row {
+  position: absolute;
+  top: 38mm;
+  left: 12.5mm;
+  right: 19mm;
+  display: grid;
+  grid-template-columns: 98mm 1fr;
+  gap: 2.2mm;
+}
+
+.index-title-box,
+.index-meta-box {
+  min-height: 10.8mm;
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+
+.index-title-box {
+  padding: 0;
+}
+
+.index-title-box h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.index-meta-box {
+  gap: 5mm;
+  justify-content: flex-start;
+  padding: 0;
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.index-meta-box strong {
+  font-weight: 800;
+}
+
+.index-meta-box span {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+.simple-index-table,
+.tasacion-index table {
+  position: absolute;
+  top: 58mm;
+  left: 31mm;
+  width: 105mm;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-size: 11px;
+  line-height: 1.15;
+}
+
+.simple-index-table td,
+.tasacion-index table td {
+  border: 0;
+  padding: 1.35mm 1.8mm 1.35mm 0;
+  vertical-align: top;
+}
+
+.tasacion-index table td:last-child {
+  width: 14mm;
+  padding-left: 4mm;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tasacion-index table p {
+  margin: 0;
+}
+
+.index-continuation table {
+  top: 40mm;
+}
+
+.clean-document {
+  padding: 22mm 24mm 18mm;
+  font-size: 11px;
+  line-height: 1.42;
+}
+
+.clean-document .page-brand {
+  top: 10mm;
+  right: 18mm;
+}
+
+.clean-document p {
+  margin: 0 0 3mm;
+}
+
+.clean-document h1 {
+  margin: 10mm 0 1.5mm;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.clean-document h2 {
+  margin: 5mm 0 1.8mm;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.clean-meta {
+  margin-top: 10mm;
+  text-align: right;
+  font-size: 10px;
+}
+
+.clean-meta p {
+  margin-bottom: 1mm;
+}
+
+.clean-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16mm;
+  margin-top: 8mm;
+}
+
+.clean-two-column p {
+  margin-bottom: 1.2mm;
+}
+
+.clean-emphasis {
+  margin-top: 4mm;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.small-note {
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+.valuation-line {
+  font-size: 13px;
+}
+
+.signature-lines {
+  margin-top: 10mm;
+}
+
+.clean-list {
+  margin: 0 0 4mm 0;
+  padding-left: 5mm;
+}
+
+.clean-list li {
+  margin-bottom: 2.6mm;
+}
+
+.compact-clean {
+  font-size: 9.5px;
+  line-height: 1.25;
+}
+
+.compact-clean h1 {
+  margin-top: 5mm;
+  font-size: 14px;
+}
+
+.compact-clean h2 {
+  margin: 3.2mm 0 1.2mm;
+  font-size: 10.5px;
+}
+
+.compact-clean p,
+.compact-clean .clean-list li {
+  margin-bottom: 1.2mm;
+}
+
+.owner-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10mm;
+  row-gap: 2.5mm;
+}
+
+.owner-item p {
+  margin-bottom: 0.7mm;
+}
+
+.legal-clean {
+  font-size: 9.2px;
+  line-height: 1.28;
+}
+
+.legal-clean h1 {
+  margin-top: 5mm;
+  font-size: 14px;
+}
+
+.legal-clean h2 {
+  margin: 3.3mm 0 1.1mm;
+  font-size: 10.5px;
+}
+
+.legal-clean p,
+.legal-clean .clean-list li {
+  margin-bottom: 1.35mm;
+}
+
+.single-signature {
+  margin: 4mm 0 5mm;
+  padding-left: 0;
+}
+
+.signature-image {
+  display: block;
+  width: 34mm;
+  height: auto;
+  margin: 1.5mm 0 1mm;
+}
+
+.report-page {
+  font-size: 9px;
+  line-height: 1.22;
+}
+
+.report-page h1 {
+  margin-top: 4mm;
+  font-size: 13px;
+}
+
+.report-page h2 {
+  margin: 2.6mm 0 1mm;
+  font-size: 10px;
+}
+
+.report-page p,
+.report-page .clean-list li {
+  margin-bottom: 0.9mm;
+}
+
+.report-page .clean-emphasis {
+  margin-top: 1.5mm;
+}
+
+.two-column-list {
+  columns: 2;
+  column-gap: 10mm;
+}
+
+.two-column-list li {
+  break-inside: avoid;
+}
+
+@media screen {
+  .pdf-page {
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.12);
+  }
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    margin: 0;
+    background: white;
+  }
+
+  .editable-template,
+  .document-pages {
+    display: block;
+  }
+
+  .pdf-page {
+    box-shadow: none;
+    margin: 0;
+  }
+}
