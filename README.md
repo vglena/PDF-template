@@ -1,29 +1,29 @@
 # Template
 
-Aplicación Next.js para editar y generar documentos de tasación en PDF.
+Next.js application for editing and generating appraisal documents as PDFs.
 
-## Requisitos
+## Requirements
 
-- [Node.js](https://nodejs.org/) v18 o superior
+- [Node.js](https://nodejs.org/) v18 or higher
 - npm
 
-## Instalación
+## Installation
 
 ```bash
 npm install
 ```
 
-Esto instalará las dependencias y descargará automáticamente el navegador Chromium necesario para la generación de PDFs.
+This will install all dependencies and automatically download the Chromium browser required for PDF generation.
 
-## Desarrollo
+## Development
 
 ```bash
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) en el navegador.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Producción
+## Production
 
 ```bash
 npm run build
