@@ -26,7 +26,11 @@ export async function renderDocumentPdf(document: EditableDocument) {
   </body>
 </html>`;
 
-  const browser = await chromium.launch({ headless: true });
+  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
+  const browser = await chromium.launch({
+    headless: true,
+    ...(executablePath ? { executablePath } : {}),
+  });
   let mainPdfBytes: Uint8Array;
   try {
     const page = await browser.newPage({
