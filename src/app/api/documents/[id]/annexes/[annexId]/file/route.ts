@@ -26,7 +26,7 @@ export async function GET(_request: Request, { params }: AnnexFileRouteContext) 
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
 
-  return new NextResponse(fileBytes, {
+  return new NextResponse(new Uint8Array(fileBytes), {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": `inline; filename="${annex.name}"`,
